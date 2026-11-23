@@ -1,0 +1,61 @@
+=================================================================
+ SISTEMA INTEGRAL DE GESTIÓN - SOFTWARE FJ
+=================================================================
+\nPRUEBA 1: Registrar cliente válido
+RESULTADO: Cliente Laura Gómez | ID: 1001 | Correo: laura@email.com
+Ejecución de la prueba finalizada.
+\nPRUEBA 2: Intentar registrar cliente con correo inválido
+ERROR CONTROLADO: El correo electrónico no tiene un formato válido.
+Ejecución de la prueba finalizada.
+\nPRUEBA 3: Registrar segundo cliente válido
+RESULTADO: Cliente Andrés Pérez | ID: 1003 | Correo: andres@email.com
+Ejecución de la prueba finalizada.
+\nPRUEBA 4: Crear servicio de reserva de sala
+RESULTADO: <servicios.ReservaSala object at 0x7f348dc57ca0>
+Ejecución de la prueba finalizada.
+\nPRUEBA 5: Crear servicio de alquiler de equipos
+RESULTADO: <servicios.AlquilerEquipo object at 0x7f348dc57e20>
+Ejecución de la prueba finalizada.
+\nPRUEBA 6: Crear servicio de asesoría especializada
+RESULTADO: <servicios.AsesoriaEspecializada object at 0x7f348dc58120>
+Ejecución de la prueba finalizada.
+\nPRUEBA 7: Intentar crear servicio con tarifa negativa
+ERROR CONTROLADO: La tarifa por hora debe ser un número positivo.
+Ejecución de la prueba finalizada.
+\nPRUEBA 8: Crear reserva válida de sala
+RESULTADO: <reservas.Reserva object at 0x7f348dc582a0>
+Ejecución de la prueba finalizada.
+\nPRUEBA 9: Crear reserva con duración inválida
+ERROR CONTROLADO: No fue posible crear la reserva.
+Ejecución de la prueba finalizada.
+\nPRUEBA 10: Crear reserva válida de equipo
+RESULTADO: <reservas.Reserva object at 0x7f348dc977a0>
+Ejecución de la prueba finalizada.
+\nPRUEBA 11: Confirmar y procesar reserva
+RESULTADO: ('Confirmada', 'Procesada', 'Reserva R001 | Cliente: Laura Gómez | Servicio: Reserva de sala | Horas: 2 | Total: $100,000.00 | Estado: Procesada')
+Ejecución de la prueba finalizada.
+\nPRUEBA 12: Intentar procesar una reserva que sigue pendiente
+ERROR CONTROLADO: La reserva debe estar confirmada antes de procesarse.
+Ejecución de la prueba finalizada.
+\nPRUEBA 13: Cancelar reserva pendiente
+RESULTADO: Cancelada
+Ejecución de la prueba finalizada.
+\nPRUEBA 14: Intentar confirmar una reserva cancelada
+ERROR CONTROLADO: Solo se pueden confirmar reservas pendientes.
+Ejecución de la prueba finalizada.
+\n=================================================================
+RESUMEN: 2 clientes, 3 servicios, 2 reservas creadas.
+Los eventos y errores se encuentran en logs/sistema.log
+El sistema finalizó las pruebas sin detenerse por los errores controlados.
+
+--- STDERR ---
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
